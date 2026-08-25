@@ -3,12 +3,10 @@ import { Experience } from "@/components/Experience";
 import { Hero } from "@/components/Hero";
 import { Projects } from "@/components/Projects";
 import { SiteFooter } from "@/components/SiteFooter";
-import { SiteNav } from "@/components/SiteNav";
 
 export default function Home() {
   return (
-    <>
-      <SiteNav />
+    <div className="min-h-full bg-[var(--page)]">
       <main>
         <Hero />
         <Experience />
@@ -16,6 +14,6 @@ export default function Home() {
         <Education />
       </main>
       <SiteFooter />
-    </>
+    </div>
   );
 }

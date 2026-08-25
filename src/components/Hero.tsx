@@ -2,43 +2,25 @@ import { profile } from "@/data/resume";
 
 export function Hero() {
   return (
-    <section
-      id="top"
-      className="relative overflow-hidden border-b border-[var(--border)]"
-    >
+    <section id="top" className="relative overflow-hidden">
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_10%_0%,color-mix(in_srgb,var(--accent)_12%,transparent),transparent_55%),radial-gradient(ellipse_70%_50%_at_90%_20%,color-mix(in_srgb,var(--ink)_6%,transparent),transparent_50%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_70%_55%_at_15%_-10%,var(--accent-tint),transparent_60%)]"
       />
-      <div className="relative mx-auto max-w-3xl px-5 py-16 sm:px-6 sm:py-24">
-        <p className="mb-3 text-sm tracking-wide text-[var(--muted)]">
+      <div className="relative mx-auto max-w-3xl px-5 py-14 sm:px-6 sm:py-20">
+        <div className="mb-5 inline-flex items-center gap-2 rounded-full bg-[var(--field)] px-3 py-1 text-xs text-[var(--ink-2)] shadow-[var(--shadow-hairline)]">
+          <span
+            aria-hidden
+            className="h-1.5 w-1.5 rounded-full bg-[var(--accent)]"
+          />
           {profile.location}
-        </p>
-        <h1 className="font-[family-name:var(--font-display)] text-[clamp(2.5rem,8vw,4rem)] leading-[1.05] tracking-tight text-[var(--ink)]">
+        </div>
+        <h1 className="text-[clamp(2rem,6vw,3rem)] font-semibold leading-[1.1] tracking-tight text-[var(--ink)]">
           {profile.name}
         </h1>
-        <p className="mt-4 max-w-xl text-lg text-[var(--body)] sm:text-xl">
+        <p className="mt-3 max-w-xl text-base text-[var(--ink-2)] sm:text-lg">
           {profile.title}
         </p>
-        <p className="mt-5 max-w-xl text-base leading-relaxed text-[var(--muted)]">
-          {profile.summary}
-        </p>
-        <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-          <a
-            href={`mailto:${profile.email}`}
-            className="inline-flex min-h-11 items-center justify-center rounded-md bg-[var(--ink)] px-5 text-sm font-medium text-[var(--background)] transition-opacity hover:opacity-90"
-          >
-            Email me
-          </a>
-          <a
-            href={profile.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex min-h-11 items-center justify-center rounded-md border border-[var(--border-strong)] px-5 text-sm font-medium text-[var(--ink)] transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]"
-          >
-            LinkedIn
-          </a>
-        </div>
       </div>
     </section>
   );
