@@ -1,16 +1,10 @@
 import type { Metadata } from "next";
-import { Instrument_Serif, Source_Sans_3 } from "next/font/google";
+import { Roboto } from "next/font/google";
 import "./globals.css";
 
-const display = Instrument_Serif({
-  weight: "400",
+const roboto = Roboto({
   subsets: ["latin"],
-  variable: "--font-display",
-  display: "swap",
-});
-
-const sans = Source_Sans_3({
-  subsets: ["latin"],
+  weight: ["400", "500", "700"],
   variable: "--font-sans",
   display: "swap",
 });
@@ -33,8 +27,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${display.variable} ${sans.variable} h-full`}>
-      <body className="min-h-full antialiased">{children}</body>
+    <html lang="en" className={`${roboto.variable} h-full`}>
+      <body className={`${roboto.className} min-h-full antialiased`}>
+        {children}
+      </body>
     </html>
   );
 }

@@ -4,7 +4,7 @@ export function SiteFooter() {
   return (
     <footer className="border-t border-[var(--border)]">
       <div className="mx-auto flex max-w-3xl flex-col gap-4 px-5 py-10 sm:flex-row sm:items-center sm:justify-between sm:px-6">
-        <p className="font-[family-name:var(--font-display)] text-base text-[var(--ink)]">
+        <p className="text-base font-medium text-[var(--ink)]">
           {profile.name}
         </p>
         <div className="flex flex-col gap-2 text-sm text-[var(--muted)] sm:flex-row sm:items-center sm:gap-5">
