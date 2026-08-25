@@ -134,32 +134,3 @@ export const education = {
     "Quantitative Models",
   ],
 };
-
-export const skillGroups: { label: string; items: string[] }[] = [
-  {
-    label: "Analytics & data",
-    items: [
-      "SQL",
-      "Python",
-      "Spark",
-      "dbt",
-      "Data Modeling",
-      "Statistical Analysis",
-      "Machine Learning",
-    ],
-  },
-  {
-    label: "Product & research",
-    items: [
-      "Product Analytics",
-      "Voice of Customer Analytics",
-      "Customer Sentiment Analysis",
-      "Experimentation & A/B Testing",
-      "Data Governance",
-    ],
-  },
-  {
-    label: "Visualization",
-    items: ["Tableau", "Power BI"],
-  },
-];
