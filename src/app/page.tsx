@@ -7,7 +7,7 @@ import { Skills } from "@/components/Skills";
 
 export default function Home() {
   return (
-    <>
+    <div className="min-h-full bg-[var(--page)]">
       <main>
         <Hero />
         <Experience />
@@ -16,6 +16,6 @@ export default function Home() {
         <Skills />
       </main>
       <SiteFooter />
-    </>
+    </div>
   );
 }
