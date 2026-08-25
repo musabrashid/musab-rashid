@@ -5,8 +5,6 @@ export const profile = {
   email: "musabrashid@gmail.com",
   phone: "(713) 724-6329",
   linkedin: "https://www.linkedin.com/in/musabrashid/",
-  summary:
-    "Product analyst focused on mobile experience, voice of customer, and data-driven roadmap prioritization—turning behavioral signal into decisions that improve engagement and retention.",
 };
 
 export type Role = {
@@ -165,10 +163,3 @@ export const skillGroups: { label: string; items: string[] }[] = [
     items: ["Tableau", "Power BI"],
   },
 ];
-
-export const navLinks = [
-  { href: "#experience", label: "Experience" },
-  { href: "#projects", label: "Projects" },
-  { href: "#education", label: "Education" },
-  { href: "#skills", label: "Skills" },
-] as const;

@@ -4,7 +4,7 @@ export function Education() {
   return (
     <section id="education" className="scroll-mt-20 border-b border-[var(--border)]">
       <div className="mx-auto max-w-3xl px-5 py-14 sm:px-6 sm:py-20">
-        <h2 className="font-[family-name:var(--font-display)] text-2xl tracking-tight text-[var(--ink)] sm:text-3xl">
+        <h2 className="text-2xl font-medium tracking-tight text-[var(--ink)] sm:text-3xl">
           Education
         </h2>
         <div className="mt-10">
