@@ -26,13 +26,16 @@ export function Education() {
           <p className="text-xs font-medium tracking-wide text-[var(--ink-3)] uppercase">
             Relevant coursework
           </p>
-          <div className="mt-3 flex flex-wrap gap-2">
+          <ul className="mt-3 space-y-1.5">
             {education.coursework.map((course) => (
-              <span key={course} className="pill">
+              <li
+                key={course}
+                className="relative pl-3.5 text-sm text-[var(--ink-2)] before:absolute before:top-[0.55em] before:left-0 before:h-1 before:w-1 before:rounded-full before:bg-[var(--ink-3)] before:content-['']"
+              >
                 {course}
-              </span>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </div>
     </Section>
