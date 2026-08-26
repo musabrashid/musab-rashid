@@ -6,7 +6,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 
 export default function Home() {
   return (
-    <div className="min-h-full bg-[var(--page)]">
+    <div className="min-h-full bg-theme-bg text-theme-text-sec">
       <main>
         <Hero />
         <Experience />
