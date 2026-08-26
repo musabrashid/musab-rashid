@@ -8,7 +8,7 @@ export function Experience() {
         {experience.map((job) => (
           <article key={job.company}>
             <header className="mb-5">
-              <h3 className="text-base font-medium text-theme-text">
+              <h3 className="text-lg font-medium tracking-tight text-theme-text">
                 {job.company}
               </h3>
               <p className="mt-1 text-sm text-theme-text-ter">{job.location}</p>
