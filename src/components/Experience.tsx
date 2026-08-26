@@ -5,8 +5,13 @@ export function Experience() {
   return (
     <Section id="experience" index="01" title="Experience">
       <div className="space-y-10">
-        {experience.map((job) => (
-          <article key={job.company}>
+        {experience.map((job, jobIndex) => (
+          <article
+            key={job.company}
+            className={
+              jobIndex > 0 ? "border-t border-theme-border pt-10" : undefined
+            }
+          >
             <header className="mb-5">
               <h3 className="text-lg font-medium tracking-tight text-theme-text">
                 {job.company}
@@ -14,15 +19,8 @@ export function Experience() {
               <p className="mt-1 text-sm text-theme-text-ter">{job.location}</p>
             </header>
             <div className="space-y-8">
-              {job.roles.map((role, roleIndex) => (
-                <div
-                  key={`${job.company}-${role.title}`}
-                  className={
-                    roleIndex > 0
-                      ? "border-t border-theme-border pt-8"
-                      : undefined
-                  }
-                >
+              {job.roles.map((role) => (
+                <div key={`${job.company}-${role.title}`}>
                   <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
                     <h4 className="text-sm font-medium text-theme-text">
                       {role.title}
