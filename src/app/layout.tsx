@@ -1,5 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import { EB_Garamond, Geist, JetBrains_Mono } from "next/font/google";
+import type { Metadata } from "next";
+import { Roboto } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
 const sans = Geist({
@@ -51,6 +55,8 @@ export default function RootLayout({
     >
       <body className={`${sans.className} min-h-full antialiased`}>
         {children}
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
