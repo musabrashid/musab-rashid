@@ -1,11 +1,22 @@
-import type { Metadata } from "next";
-import { Roboto } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { EB_Garamond, Geist, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-const roboto = Roboto({
+const sans = Geist({
   subsets: ["latin"],
-  weight: ["400", "500", "700"],
-  variable: "--font-sans",
+  variable: "--font-cursor-sans",
+  display: "swap",
+});
+
+const serif = EB_Garamond({
+  subsets: ["latin"],
+  variable: "--font-cursor-serif",
+  display: "swap",
+});
+
+const mono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-cursor-mono",
   display: "swap",
 });
 
@@ -21,14 +32,24 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#f7f7f4" },
+    { media: "(prefers-color-scheme: dark)", color: "#14120b" },
+  ],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${roboto.variable} h-full`}>
-      <body className={`${roboto.className} min-h-full antialiased`}>
+    <html
+      lang="en"
+      className={`${sans.variable} ${serif.variable} ${mono.variable} h-full`}
+    >
+      <body className={`${sans.className} min-h-full antialiased`}>
         {children}
       </body>
     </html>

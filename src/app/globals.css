@@ -1,62 +1,69 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 :root {
   color-scheme: light;
-  --page: oklch(98.5% 0.001 286.376);
-  --canvas: oklch(96.1% 0.002 247.84);
-  --surface: oklch(100% 0 0);
-  --inset: oklch(97.9% 0.002 247.839);
-  --hover: oklch(97% 0.002 247.839);
-  --hover-2: oklch(93.3% 0.003 247.86);
-  --ink: oklch(24.7% 0.006 258.361);
-  --ink-2: oklch(50.6% 0.01 264.477);
-  --ink-3: oklch(69.5% 0.009 264.505);
-  --line: oklch(94.6% 0.003 264.542);
-  --line-strong: oklch(91.2% 0.005 258.326);
-  --field: oklch(96.1% 0.001 286.375);
-  --accent: oklch(62.6% 0.205 254.947);
-  --accent-ink: oklch(55.6% 0.187 255.617);
-  --accent-tint: oklch(96% 0.019 252.878);
-  --shadow-hairline: 0 0 0 1px var(--line);
-  --shadow-card:
-    0 0 0 1px var(--line),
-    0 1px 2px oklch(0% 0 0 / 0.04),
-    0 2px 8px oklch(0% 0 0 / 0.04);
-  --radius-window: 14px;
-  --background: var(--page);
-  --foreground: var(--ink);
+  --theme-bg: #f7f7f4;
+  --theme-fg: #26251e;
+  --theme-fg-02: #3b3a33;
+  --theme-text: var(--theme-fg);
+  --theme-text-sec: color-mix(in oklab, var(--theme-fg) 60%, transparent);
+  --theme-text-ter: color-mix(in oklab, var(--theme-fg) 40%, transparent);
+  --theme-text-mid: color-mix(in oklab, var(--theme-fg) 50%, transparent);
+  --theme-border: color-mix(in oklab, var(--theme-fg) 10%, transparent);
+  --theme-border-02: color-mix(in oklab, var(--theme-fg) 14%, transparent);
+  --theme-border-03: color-mix(in oklab, var(--theme-fg) 28%, transparent);
+  --theme-card: #f2f1ed;
+  --theme-card-01: #f0efeb;
+  --theme-card-02: #ebeae5;
+  --theme-bg-hover: color-mix(in oklab, var(--theme-fg) 5%, transparent);
+  --theme-accent: #f54e00;
+  --theme-button-bg: var(--theme-fg);
+  --theme-button-text: var(--theme-bg);
+  --spacing-page-x: 1.25rem;
+  --max-width-prose: 42rem;
+  --background: var(--theme-bg);
+  --foreground: var(--theme-fg);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     color-scheme: dark;
-    --page: oklch(20.9% 0.004 264.477);
-    --canvas: oklch(23.1% 0.004 264.487);
-    --surface: oklch(26% 0.006 271.191);
-    --inset: oklch(24.3% 0.004 264.492);
-    --hover: oklch(28.9% 0.006 271.22);
-    --hover-2: oklch(31.8% 0.007 274.747);
-    --ink: oklch(96.4% 0.002 247.839);
-    --ink-2: oklch(73.1% 0.008 260.731);
-    --ink-3: oklch(54.1% 0.01 264.484);
-    --line: oklch(30.8% 0.006 258.354);
-    --line-strong: oklch(35.6% 0.007 264.474);
-    --field: oklch(29.3% 0.006 271.223);
-    --accent: oklch(68% 0.173 253.301);
-    --accent-ink: oklch(78.8% 0.113 248.33);
-    --accent-tint: oklch(68% 0.173 253.301 / 0.16);
-    --shadow-hairline: 0 0 0 1px var(--line);
-    --shadow-card:
-      0 0 0 1px oklch(100% 0 0 / 0.11),
-      0 1px 2px oklch(0% 0 0 / 0.2),
-      0 2px 6px oklch(0% 0 0 / 0.2);
+    --theme-bg: #14120b;
+    --theme-fg: #edecec;
+    --theme-fg-02: #d7d6d5;
+    --theme-text: var(--theme-fg);
+    --theme-text-sec: color-mix(in oklab, var(--theme-fg) 60%, transparent);
+    --theme-text-ter: color-mix(in oklab, var(--theme-fg) 40%, transparent);
+    --theme-text-mid: color-mix(in oklab, var(--theme-fg) 50%, transparent);
+    --theme-border: color-mix(in oklab, var(--theme-fg) 10%, transparent);
+    --theme-border-02: color-mix(in oklab, var(--theme-fg) 14%, transparent);
+    --theme-border-03: color-mix(in oklab, var(--theme-fg) 28%, transparent);
+    --theme-card: #1b1913;
+    --theme-card-01: #1d1b15;
+    --theme-card-02: #201e18;
+    --theme-bg-hover: color-mix(in oklab, var(--theme-fg) 8%, transparent);
+    --theme-accent: #f54e00;
+    --theme-button-bg: var(--theme-fg);
+    --theme-button-text: var(--theme-bg);
   }
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-sans);
+  --color-theme-bg: var(--theme-bg);
+  --color-theme-fg: var(--theme-fg);
+  --color-theme-text: var(--theme-text);
+  --color-theme-text-sec: var(--theme-text-sec);
+  --color-theme-text-ter: var(--theme-text-ter);
+  --color-theme-border: var(--theme-border);
+  --color-theme-border-02: var(--theme-border-02);
+  --color-theme-card: var(--theme-card);
+  --color-theme-accent: var(--theme-accent);
+  --font-sans: var(--font-cursor-sans);
+  --font-serif: var(--font-cursor-serif);
+  --font-mono: var(--font-cursor-mono);
 }
 
 html {
@@ -64,40 +71,56 @@ html {
 }
 
 body {
-  background: var(--page);
-  color: var(--ink-2);
-  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  background: var(--theme-bg);
+  color: var(--theme-text-sec);
+  font-family: var(--font-cursor-sans), ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
 ::selection {
-  background: var(--accent-tint);
-  color: var(--ink);
+  background: color-mix(in oklab, var(--theme-accent) 28%, transparent);
+  color: var(--theme-fg);
+}
+
+.font-serif {
+  font-family: var(--font-cursor-serif), ui-serif, Georgia, Cambria, "Times New Roman",
+    Times, serif;
+}
+
+.font-mono {
+  font-family: var(--font-cursor-mono), ui-monospace, SFMono-Regular, Menlo, Monaco,
+    Consolas, monospace;
+}
+
+.page-shell {
+  margin-inline: auto;
+  width: 100%;
+  max-width: var(--max-width-prose);
+  padding-inline: var(--spacing-page-x);
+}
+
+@media (min-width: 640px) {
+  .page-shell {
+    --spacing-page-x: 1.5rem;
+  }
 }
 
 .section-rule {
-  border-top: 1px dashed var(--line);
+  border-top: 1px solid var(--theme-border);
 }
 
-.surface-card {
-  background: var(--surface);
-  border-radius: var(--radius-window);
-  box-shadow: var(--shadow-card);
+.surface-panel {
+  background: var(--theme-card);
+  border: 1px solid var(--theme-border);
+  border-radius: 0.5rem;
 }
 
-.pill {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 2rem;
-  border-radius: 9999px;
-  background: var(--field);
-  padding: 0.375rem 0.875rem;
-  font-size: 0.8125rem;
-  color: var(--ink);
-  transition: background-color 150ms ease, color 150ms ease;
+.link-quiet {
+  color: var(--theme-text-sec);
+  text-underline-offset: 0.2em;
+  transition: color 150ms ease;
 }
 
-.pill:hover {
-  background: var(--hover);
-  color: var(--ink);
+.link-quiet:hover {
+  color: var(--theme-fg);
 }

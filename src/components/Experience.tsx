@@ -4,42 +4,38 @@ import { experience } from "@/data/resume";
 export function Experience() {
   return (
     <Section id="experience" index="01" title="Experience">
-      <div className="space-y-4">
+      <div className="space-y-10">
         {experience.map((job) => (
-          <article key={job.company} className="surface-card p-5 sm:p-6">
-            <header className="mb-5 flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
-              <div>
-                <h3 className="text-base font-semibold text-[var(--ink)]">
-                  {job.company}
-                </h3>
-                <p className="mt-0.5 text-sm text-[var(--ink-3)]">
-                  {job.location}
-                </p>
-              </div>
+          <article key={job.company}>
+            <header className="mb-5">
+              <h3 className="text-base font-medium text-theme-text">
+                {job.company}
+              </h3>
+              <p className="mt-1 text-sm text-theme-text-ter">{job.location}</p>
             </header>
-            <div className="space-y-6">
+            <div className="space-y-8">
               {job.roles.map((role, roleIndex) => (
                 <div
                   key={`${job.company}-${role.title}`}
                   className={
                     roleIndex > 0
-                      ? "border-t border-dashed border-[var(--line)] pt-6"
+                      ? "border-t border-theme-border pt-8"
                       : undefined
                   }
                 >
                   <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
-                    <h4 className="text-sm font-medium text-[var(--ink)]">
+                    <h4 className="text-sm font-medium text-theme-text">
                       {role.title}
                     </h4>
-                    <p className="shrink-0 text-xs tabular-nums text-[var(--ink-3)]">
+                    <p className="font-mono shrink-0 text-[11px] tracking-wide text-theme-text-ter tabular-nums">
                       {role.start} – {role.end}
                     </p>
                   </div>
-                  <ul className="mt-3 space-y-2.5">
+                  <ul className="mt-3 max-w-prose space-y-2.5">
                     {role.bullets.map((bullet) => (
                       <li
                         key={bullet.slice(0, 48)}
-                        className="relative pl-3.5 text-sm leading-relaxed text-[var(--ink-2)] before:absolute before:top-[0.55em] before:left-0 before:h-1 before:w-1 before:rounded-full before:bg-[var(--ink-3)] before:content-['']"
+                        className="relative pl-3.5 text-[0.9375rem] leading-relaxed text-theme-text-sec before:absolute before:top-[0.65em] before:left-0 before:h-1 before:w-1 before:rounded-full before:bg-theme-text-ter before:content-['']"
                       >
                         {bullet}
                       </li>
