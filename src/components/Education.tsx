@@ -22,20 +22,13 @@ export function Education() {
             </li>
           ))}
         </ul>
-        <div className="mt-6 border-t border-theme-border pt-5">
+        <div className="mt-4">
           <p className="font-mono text-[11px] tracking-[0.12em] text-theme-text-ter uppercase">
             Relevant coursework
           </p>
-          <ul className="mt-3 space-y-1.5">
-            {education.coursework.map((course) => (
-              <li
-                key={course}
-                className="relative pl-3.5 text-sm text-theme-text-sec before:absolute before:top-[0.55em] before:left-0 before:h-1 before:w-1 before:rounded-full before:bg-theme-text-ter before:content-['']"
-              >
-                {course}
-              </li>
-            ))}
-          </ul>
+          <p className="mt-2 text-sm leading-relaxed text-theme-text-sec">
+            {education.coursework.join(" · ")}
+          </p>
         </div>
       </div>
     </Section>
